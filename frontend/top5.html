@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FritoMapp - Top 5</title>
+  <link rel="stylesheet" href="assets/css/estilos.css" />
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <style href="assets/css/estilos.css"></style>
+</head>
+<body>
+
+  <nav class="barra-nav" id="barra-nav">
+    <div class="nav-logo">
+  <div class="nav-logo-icono">🍳</div>
+  <span class="nav-logo-texto">FritoMapp</span>
+  </div>
+  <button class="boton-flotante" id="boton-flotante" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+    <ul class="nav-enlaces">
+      <li><a href="index.html">Puestos</a></li>
+      <li><a href="top5.html" class="activo">Top 5</a></li>
+      <li><a href="galeria.html">Galería</a></li>
+      <li><a href="ganadores.html">Salón de la Fama</a></li>
+    </ul>
+    <div class="nav-sesion">
+  <button class="boton-sesion" id="boton-sesion">Iniciar sesión</button>
+  <div class="menu-usuario" id="menu-usuario">
+    <button class="boton-usuario" id="boton-usuario">
+      <div class="avatar-usuario" id="avatar-usuario">U</div>
+      <span id="nombre-usuario">Usuario</span>
+      <span class="flecha-usuario">▾</span>
+    </button>
+    <div class="dropdown-usuario" id="dropdown-usuario">
+      <div class="dropdown-email" id="dropdown-email"></div>
+      <button class="dropdown-cerrar" id="boton-cerrar-sesion">Cerrar sesión</button>
+    </div>
+  </div>
+</div>
+  </nav>
+
+  <button class="boton-flotante" id="boton-flotante" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="menu-movil" id="menu-movil">
+    <ul>
+      <li><a href="index.html">Puestos</a></li>
+      <li><a href="top5.html" class="activo">Top 5</a></li>
+      <li><a href="galeria.html">Galería</a></li>
+      <li><a href="ganadores.html">Salón de la Fama</a></li>
+      <li><a href="#" id="boton-sesion-movil">Iniciar sesión</a></li>
+    </ul>
+  </div>
+  <div class="fondo-menu-movil" id="fondo-menu-movil"></div>
+
+  <section class="hero-top5">
+    <span class="hero-etiqueta">XLII Festival del Frito</span>
+    <h1>🏆 Top 5 del Festival</h1>
+    <p>Los fritos más votados por los asistentes en tiempo real</p>
+    <div class="indicador-vivo">
+      <div class="punto-vivo"></div>
+      <span class="texto-vivo">ACTUALIZACIÓN EN VIVO</span>
+    </div>
+  </section>
+
+  <section class="seccion-top5">
+    <div class="contenedor">
+      <div class="lista-top5" id="lista-top5">
+        <div class="cargando">Cargando ranking...</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="fondo-formulario" id="fondo-formulario">
+    <div class="formulario-sesion">
+      <button class="boton-cerrar-formulario" id="boton-cerrar-formulario">&times;</button>
+      <h2 class="formulario-titulo">Iniciar sesión</h2>
+      <p class="formulario-subtitulo">Para votar por tu frito favorito</p>
+      <input type="email" id="campo-correo" placeholder="Correo electrónico" class="campo-formulario"/>
+      <input type="password" id="campo-contrasena" placeholder="Contraseña" class="campo-formulario"/>
+      <button class="boton-enviar" id="boton-enviar">Entrar</button>
+      <p class="formulario-cambiar">¿No tienes cuenta?
+        <span id="cambiar-registro">Regístrate</span>
+      </p>
+      <p class="formulario-error" id="formulario-error"></p>
+    </div>
+  </div>
+
+  <script src="assets/js/supabase.js"></script>
+  <script src="assets/js/autenticacion.js"></script>
+  <script src="assets/js/top5.js"></script>
+
+</body>
+</html>
