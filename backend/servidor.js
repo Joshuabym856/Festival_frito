@@ -30,10 +30,13 @@ app.get('/api', (req, res) => {
   res.json({ message: 'API de FritoMapp' });
 });
 
-app.get('/inicio', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/index.html'));
 });
 
+app.get('/inicio', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/index.html'));
+});
 
 // Iniciar servidor
 app.listen(PORT, () => {
