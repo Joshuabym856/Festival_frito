@@ -27,7 +27,7 @@ Aplicación web interactiva para el **XLII Festival del Frito Cartagenero**. Per
 ## Enlaces
 
 - **Github**: https://github.com/Joshuabym856/Festival_frito/
-- **Railway**: 
+- **Railway**: https://festivalfrito-production.up.railway.app/
 
 ## Autor
 
