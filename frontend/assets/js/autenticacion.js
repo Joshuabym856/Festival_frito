@@ -133,8 +133,10 @@ botonCerrarSesion.addEventListener('click', async () => {
 });
 
 // Verificar sesión al cargar
-clienteSupabase.auth.getSession().then(({ data: { session } }) => {
-  if (session) actualizarBotonSesion(session.user);
+document.addEventListener('DOMContentLoaded', () => {
+  clienteSupabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) actualizarBotonSesion(session.user);
+  });
 });
 
 // Mantener sesión entre pestañas
