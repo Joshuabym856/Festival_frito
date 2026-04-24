@@ -96,6 +96,24 @@ function actualizarBotonSesion(usuario) {
     botonSesion.style.display = '';
     menuUsuario.style.display = 'none';
   }
+
+  // Actualizar menú móvil
+const infoMovil = document.getElementById('info-usuario-movil');
+const cerrarMovil = document.getElementById('cerrar-sesion-movil-li');
+const avatarMovil = document.getElementById('avatar-usuario-movil');
+const nombreMovil = document.getElementById('nombre-usuario-movil');
+
+if (usuario) {
+  if (infoMovil) infoMovil.style.display = 'block';
+  if (cerrarMovil) cerrarMovil.style.display = 'block';
+  if (avatarMovil) avatarMovil.textContent = usuario.email[0].toUpperCase();
+  if (nombreMovil) nombreMovil.textContent = usuario.email.split('@')[0];
+  if (botonSesionMovil) botonSesionMovil.style.display = 'none';
+} else {
+  if (infoMovil) infoMovil.style.display = 'none';
+  if (cerrarMovil) cerrarMovil.style.display = 'none';
+  if (botonSesionMovil) botonSesionMovil.style.display = 'block';
+}
 }
 
 botonUsuario.addEventListener('click', () => {
@@ -115,8 +133,10 @@ botonCerrarSesion.addEventListener('click', async () => {
 });
 
 // Verificar sesión al cargar
-clienteSupabase.auth.getSession().then(({ data: { session } }) => {
-  if (session) actualizarBotonSesion(session.user);
+document.addEventListener('DOMContentLoaded', () => {
+  clienteSupabase.auth.getSession().then(({ data: { session } }) => {
+    if (session) actualizarBotonSesion(session.user);
+  });
 });
 
 // Mantener sesión entre pestañas
@@ -152,4 +172,10 @@ function cerrarMenuMovil() {
 
 document.querySelectorAll('.menu-movil ul li a').forEach(enlace => {
   enlace.addEventListener('click', cerrarMenuMovil);
+});
+
+//cerrar sesión móvil
+document.getElementById('cerrar-sesion-movil')?.addEventListener('click', async () => {
+  await clienteSupabase.auth.signOut();
+  actualizarBotonSesion(null);
 });

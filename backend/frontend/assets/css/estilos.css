@@ -505,6 +505,7 @@ body {
 @media (max-width: 768px) {
   .nav-enlaces { display: none; }
   .nav-sesion { display: none; }
+  .menu-usuario { display: none !important; }
   .boton-flotante { display: flex; }
   .seccion-hero {
      flex-direction: column;
@@ -595,9 +596,9 @@ body {
   margin-top: 10px;
 }
 
-/* ========================
+/* 
    MENÚ DE FRITOS
-======================== */
+ */
 .seccion-menu { padding: 32px 0; }
 
 .cuadricula-fritos {
@@ -1248,3 +1249,11 @@ body {
   transition: background 0.2s;
 }
 .dropdown-cerrar:hover { background: var(--crema); }
+
+.usuario-movil {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--borde);
+}
