@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FritoMapp</title>
+  <link rel="stylesheet" href="assets/css/estilos.css" />
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <!-- BARRA DE NAVEGACIÓN DE ESCRITORIO -->
+  <nav class="barra-nav" id="barra-nav">
+    <div class="nav-logo">
+  <div class="nav-logo-icono">🍳</div>
+  <span class="nav-logo-texto">FritoMapp</span>
+  </div>
+   <button class="boton-flotante" id="boton-flotante" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+    <ul class="nav-enlaces">
+      <li><a href="index.html" class="activo">Puestos</a></li>
+      <li><a href="top5.html">Top 5</a></li>
+      <li><a href="galeria.html">Galería</a></li>
+      <li><a href="ganadores.html">Salón de la Fama</a></li>
+    </ul>
+    <div class="nav-sesion">
+  <button class="boton-sesion" id="boton-sesion">Iniciar sesión</button>
+  <div class="menu-usuario" id="menu-usuario">
+    <button class="boton-usuario" id="boton-usuario">
+      <div class="avatar-usuario" id="avatar-usuario">U</div>
+      <span id="nombre-usuario">Usuario</span>
+      <span class="flecha-usuario">▾</span>
+    </button>
+    <div class="dropdown-usuario" id="dropdown-usuario">
+      <div class="dropdown-email" id="dropdown-email"></div>
+      <button class="dropdown-cerrar" id="boton-cerrar-sesion">Cerrar sesión</button>
+    </div>
+  </div>
+</div>
+  </nav>
+
+  <!-- BOTÓN FLOTANTE MÓVIL -->
+  <button class="boton-flotante" id="boton-flotante" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+
+  <!-- MENÚ MÓVIL DESPLEGABLE -->
+  <div class="menu-movil" id="menu-movil">
+    <ul>
+      <li><a href="index.html" class="activo">Puestos</a></li>
+      <li><a href="top5.html">Top 5</a></li>
+      <li><a href="galeria.html">Galería</a></li>
+      <li><a href="ganadores.html">Salón de la Fama</a></li>
+      <li><a href="#" id="boton-sesion-movil">Iniciar sesión</a></li>
+    </ul>
+  </div>
+  <div class="fondo-menu-movil" id="fondo-menu-movil"></div>
+
+  <!-- HERO -->
+  <section class="seccion-hero">
+    <div class="hero-contenido">
+      <span class="hero-etiqueta">XLII Festival del Frito</span>
+      <h1 class="hero-titulo">Ruta gastronómica cartagenera</h1>
+      <p class="hero-subtitulo">¡Descubre los mejores puestos, conoce a las matronas y vota por tu frito favorito!</p>
+    </div>
+    <div class="hero-img">
+      <img src="assets/Img/1-3-1024x576.jpg" class="imagen_central">
+    </div>
+  </section>
+
+  <!-- FILTROS -->
+  <section class="seccion-filtros">
+    <div class="contenedor">
+      <div class="filtros-envoltorio">
+        <input 
+          type="text" 
+          id="campo-busqueda" 
+          placeholder="Buscar matrona o frito..." 
+          class="campo-busqueda"
+        />
+        <div class="grupo-filtros" id="grupo-filtros">
+          <button class="boton-filtro activo" data-categoria="todos">Todos</button>
+          <button class="boton-filtro" data-categoria="Arepa de huevo">Arepa de huevo</button>
+          <button class="boton-filtro" data-categoria="Carimañola">Carimañola</button>
+          <button class="boton-filtro" data-categoria="Empanada">Empanada</button>
+          <button class="boton-filtro" data-categoria="Buñuelo de frijol">Buñuelo</button>
+          <button class="boton-filtro" data-categoria="Arepita dulce">Arepita dulce</button>
+          <button class="boton-filtro" data-categoria="Frito innovador">Frito innovador</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIRECTORIO DE PUESTOS -->
+  <section class="seccion-directorio">
+    <div class="contenedor">
+      <h2 class="titulo-seccion">Directorio de puestos</h2>
+      <div class="cuadricula-puestos" id="cuadricula-puestos">
+        <div class="cargando">Cargando puestos...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULARIO DE SESIÓN -->
+  <div class="fondo-formulario" id="fondo-formulario">
+    <div class="formulario-sesion">
+      <button class="boton-cerrar-formulario" id="boton-cerrar-formulario">&times;</button>
+      <h2 class="formulario-titulo">Iniciar sesión</h2>
+      <p class="formulario-subtitulo">Para votar por tu frito favorito</p>
+      <input type="email" id="campo-correo" placeholder="Correo electrónico" class="campo-formulario"/>
+      <input type="password" id="campo-contrasena" placeholder="Contraseña" class="campo-formulario"/>
+      <button class="boton-enviar" id="boton-enviar">Entrar</button>
+      <p class="formulario-cambiar">¿No tienes cuenta? 
+        <span id="cambiar-registro">Regístrate</span>
+      </p>
+      <p class="formulario-error" id="formulario-error"></p>
+    </div>
+  </div>
+
+  <script src="assets/js/supabase.js"></script>
+  <script src="assets/js/autenticacion.js"></script>
+  <script src="assets/js/puestos.js"></script>
+
+</body>
+</html>

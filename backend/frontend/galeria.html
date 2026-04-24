@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FritoMapp - Galería</title>
+  <link rel="stylesheet" href="assets/css/estilos.css" />
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <nav class="barra-nav" id="barra-nav">
+    <div class="nav-logo">
+      <div class="nav-logo-icono">🍳</div>
+      <span class="nav-logo-texto">FritoMapp</span>
+    </div>
+    <ul class="nav-enlaces">
+      <li><a href="index.html">Puestos</a></li>
+      <li><a href="top5.html">Top 5</a></li>
+      <li><a href="galeria.html" class="activo">Galería</a></li>
+      <li><a href="ganadores.html">Salón de la Fama</a></li>
+    </ul>
+    <div class="nav-sesion">
+  <button class="boton-sesion" id="boton-sesion">Iniciar sesión</button>
+  <div class="menu-usuario" id="menu-usuario">
+    <button class="boton-usuario" id="boton-usuario">
+      <div class="avatar-usuario" id="avatar-usuario">U</div>
+      <span id="nombre-usuario">Usuario</span>
+      <span class="flecha-usuario">▾</span>
+    </button>
+    <div class="dropdown-usuario" id="dropdown-usuario">
+      <div class="dropdown-email" id="dropdown-email"></div>
+      <button class="dropdown-cerrar" id="boton-cerrar-sesion">Cerrar sesión</button>
+    </div>
+  </div>
+</div>
+    <button class="boton-flotante" id="boton-flotante" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="menu-movil" id="menu-movil">
+    <div class="menu-movil-header">
+      <div class="nav-logo-icono">🍳</div>
+      <span>FritoMapp</span>
+    </div>
+    <ul>
+      <li><a href="index.html">Puestos</a></li>
+      <li><a href="top5.html">Top 5</a></li>
+      <li><a href="galeria.html" class="activo">Galería</a></li>
+      <li><a href="ganadores.html">Salón de la Fama</a></li>
+      <li><a href="#" id="boton-sesion-movil">Iniciar sesión</a></li>
+    </ul>
+  </div>
+  <div class="fondo-menu-movil" id="fondo-menu-movil"></div>
+
+  <section class="hero-galeria">
+    <span class="hero-etiqueta">XLII Festival del Frito</span>
+    <h1>📸 Galería</h1>
+    <p>Los fritos más deliciosos del festival en imágenes</p>
+  </section>
+
+  <section class="seccion-galeria">
+    <div class="contenedor">
+
+      <!-- FILTROS -->
+      <div class="filtros-galeria" id="filtros-galeria">
+        <button class="boton-filtro activo" data-categoria="todos">Todos</button>
+        <button class="boton-filtro" data-categoria="Arepa de huevo">Arepa de huevo</button>
+        <button class="boton-filtro" data-categoria="Carimañola">Carimañola</button>
+        <button class="boton-filtro" data-categoria="Empanada">Empanada</button>
+        <button class="boton-filtro" data-categoria="Buñuelo de frijol">Buñuelo</button>
+        <button class="boton-filtro" data-categoria="Arepita dulce">Arepita dulce</button>
+        <button class="boton-filtro" data-categoria="Frito innovador">Frito innovador</button>
+      </div>
+
+      <!-- GRID -->
+      <div class="grid-galeria" id="grid-galeria">
+        <div class="cargando">Cargando galería...</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-cerrar" id="lightbox-cerrar">&times;</button>
+    <div class="lightbox-contenido" id="lightbox-contenido"></div>
+  </div>
+
+  <div class="fondo-formulario" id="fondo-formulario">
+    <div class="formulario-sesion">
+      <button class="boton-cerrar-formulario" id="boton-cerrar-formulario">&times;</button>
+      <h2 class="formulario-titulo">Iniciar sesión</h2>
+      <p class="formulario-subtitulo">Para votar por tu frito favorito</p>
+      <input type="email" id="campo-correo" placeholder="Correo electrónico" class="campo-formulario"/>
+      <input type="password" id="campo-contrasena" placeholder="Contraseña" class="campo-formulario"/>
+      <button class="boton-enviar" id="boton-enviar">Entrar</button>
+      <p class="formulario-cambiar">¿No tienes cuenta? <span id="cambiar-registro">Regístrate</span></p>
+      <p class="formulario-error" id="formulario-error"></p>
+    </div>
+  </div>
+
+  <script src="assets/js/supabase.js"></script>
+  <script src="assets/js/autenticacion.js"></script>
+  <script src="assets/js/galeria.js"></script>
+
+</body>
+</html> 

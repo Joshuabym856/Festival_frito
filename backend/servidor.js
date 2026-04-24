@@ -24,18 +24,18 @@ app.use('/api/votos',      votosRoutes);
 app.use('/api/ganadores',  ganadoresRoutes);
 
 // Ruta para servir el frontend
-app.use(express.static(path.join(__dirname, '..', 'frontend')));
+app.use(express.static(path.join(__dirname, 'frontend')));
 
 app.get('/api', (req, res) => {
   res.json({ message: 'API de FritoMapp' });
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'frontend', 'index.html'));
+  res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
 });
 
 app.get('/inicio', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'frontend', 'index.html'));
+  res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
 });
 
 // Iniciar servidor

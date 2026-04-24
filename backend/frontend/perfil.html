@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FritoMapp - Perfil</title>
+  <link rel="stylesheet" href="assets/css/estilos.css" />
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <!-- BARRA DE NAVEGACIÓN -->
+  <nav class="barra-nav" id="barra-nav">
+    <div class="nav-logo">
+    <div class="nav-logo-icono">🍳</div>
+   <span class="nav-logo-texto">FritoMapp</span>
+    </div>
+     <button class="boton-flotante" id="boton-flotante" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+    <ul class="nav-enlaces">
+      <li><a href="index.html">Puestos</a></li>
+      <li><a href="top5.html">Top 5</a></li>
+      <li><a href="galeria.html">Galería</a></li>
+      <li><a href="ganadores.html">Salón de la Fama</a></li>
+    </ul>
+    <div class="nav-sesion">
+  <button class="boton-sesion" id="boton-sesion">Iniciar sesión</button>
+  <div class="menu-usuario" id="menu-usuario">
+    <button class="boton-usuario" id="boton-usuario">
+      <div class="avatar-usuario" id="avatar-usuario">U</div>
+      <span id="nombre-usuario">Usuario</span>
+      <span class="flecha-usuario">▾</span>
+    </button>
+    <div class="dropdown-usuario" id="dropdown-usuario">
+      <div class="dropdown-email" id="dropdown-email"></div>
+      <button class="dropdown-cerrar" id="boton-cerrar-sesion">Cerrar sesión</button>
+    </div>
+  </div>
+</div>
+  </nav>
+
+  <!-- BOTÓN FLOTANTE MÓVIL -->
+  <button class="boton-flotante" id="boton-flotante" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+
+  <!-- MENÚ MÓVIL -->
+  <div class="menu-movil" id="menu-movil">
+    <ul>
+      <li><a href="index.html">Puestos</a></li>
+      <li><a href="top5.html">Top 5</a></li>
+      <li><a href="galeria.html">Galería</a></li>
+      <li><a href="ganadores.html">Salón de la Fama</a></li>
+      <li><a href="#" id="boton-sesion-movil">Iniciar sesión</a></li>
+    </ul>
+  </div>
+  <div class="fondo-menu-movil" id="fondo-menu-movil"></div>
+
+  <!-- ENCABEZADO DEL PERFIL -->
+  <section class="seccion-encabezado-perfil" id="seccion-encabezado-perfil">
+    <div class="contenedor">
+      <a href="index.html" class="boton-volver">← Volver al directorio</a>
+      <div class="encabezado-perfil" id="encabezado-perfil">
+        <div class="cargando">Cargando perfil...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENÚ DE FRITOS -->
+  <section class="seccion-menu">
+    <div class="contenedor">
+      <h2 class="titulo-seccion">Menú del puesto</h2>
+      <div class="cuadricula-fritos" id="cuadricula-fritos">
+        <div class="cargando">Cargando fritos...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAPA -->
+<section class="seccion-mapa">
+  <div class="contenedor">
+    <h2 class="titulo-seccion">📍 Ubicación del puesto</h2>
+    <div id="mapa" class="mapa-contenedor"></div>
+  </div>
+</section>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- CÓDIGO QR -->
+  <section class="seccion-qr">
+    <div class="contenedor">
+      <h2 class="titulo-seccion">Código QR del puesto</h2>
+      <div class="envoltorio-qr">
+        <div id="codigo-qr"></div>
+        <p class="texto-qr">Escanea este código para compartir el perfil de este puesto</p>
+        <button class="boton-descargar-qr" id="boton-descargar-qr">Descargar QR</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULARIO DE SESIÓN -->
+  <div class="fondo-formulario" id="fondo-formulario">
+    <div class="formulario-sesion">
+      <button class="boton-cerrar-formulario" id="boton-cerrar-formulario">&times;</button>
+      <h2 class="formulario-titulo">Iniciar sesión</h2>
+      <p class="formulario-subtitulo">Para votar por tu frito favorito</p>
+      <input type="email" id="campo-correo" placeholder="Correo electrónico" class="campo-formulario"/>
+      <input type="password" id="campo-contrasena" placeholder="Contraseña" class="campo-formulario"/>
+      <button class="boton-enviar" id="boton-enviar">Entrar</button>
+      <p class="formulario-cambiar">¿No tienes cuenta?
+        <span id="cambiar-registro">Regístrate</span>
+      </p>
+      <p class="formulario-error" id="formulario-error"></p>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="assets/js/supabase.js"></script>
+  <script src="assets/js/autenticacion.js"></script>
+  <script src="assets/js/perfil.js"></script>
+
+</body>
+</html>
